@@ -13,7 +13,7 @@ load = (458,  364,  765)
 # autosave slot (anywhere)
 slot = (348,  219,  746)
 # confirm button
-conf = (226,  743,  411)
+conf = (261, 761, 765)
 # big "chatroom button" (also something white)
 main = (409,  756,  765)
 # first day
@@ -22,9 +22,9 @@ days = (224,  439,  263)
 # after 23:01
 cha0 = (433,  573,  153)
 # after 20:53
-cha1 = (433,  573,  153)
+cha1 = (433,  858,  153)
 # after 19:18
-cha2 = (433,  573,  153)
+cha2 = (433, 1044, 153)
 # max speed button (anywhere)
 mspd = (216,  95,   336)
 # just the coordinates of answers
@@ -47,7 +47,7 @@ time1 = 20 * 60 + 53
 time0 = 23 * 60 +  1
 
 # "time" of you save in (hh * 60 + mm) format  
-timeS =  2 * 60 + 28
+timeS = 22 * 60 +  6
 
 # for makelog, optional
 # (top left coord concat bottom right 
@@ -121,10 +121,10 @@ while True:
     t = l[3] * 60 + l[4]
     chat = 0
 
-    if time1 >= timeS >= l > time2:
+    if time1 >= t >= timeS > time2:
         chat = cha2
-    elif (time1 >= timeS > time2 and time0 >= l > time1) \
-        or (time0 >= timeS >= l > time1):
+    elif (time1 >= t > time2 and time0 >= timeS > time1) \
+        or (time0 >= t >= timeS > time1):
         chat = cha1
     else:
         chat = cha0
